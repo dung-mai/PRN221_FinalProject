@@ -1,0 +1,14 @@
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\DataAccess\bin\Debug\net6.0\DataAccess.runtimeconfig.json
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\DataAccess\bin\Debug\net6.0\DataAccess.dll
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\DataAccess\bin\Debug\net6.0\DataAccess.pdb
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\DataAccess\obj\Debug\net6.0\DataAccess.csproj.AssemblyReference.cache
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\DataAccess\obj\Debug\net6.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfoInputs.cache
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfo.cs
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\DataAccess\obj\Debug\net6.0\DataAccess.dll
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\DataAccess\obj\Debug\net6.0\DataAccess.pdb
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\DataAccess\obj\Debug\net6.0\DataAccess.genruntimeconfig.cache
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll

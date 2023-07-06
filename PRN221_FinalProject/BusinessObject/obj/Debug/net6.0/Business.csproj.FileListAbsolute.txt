@@ -1,0 +1,15 @@
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\BusinessObject\bin\Debug\net6.0\Business.deps.json
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\BusinessObject\bin\Debug\net6.0\Business.dll
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\BusinessObject\bin\Debug\net6.0\Business.pdb
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\BusinessObject\bin\Debug\net6.0\DataAccess.dll
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\BusinessObject\bin\Debug\net6.0\DataAccess.pdb
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\BusinessObject\obj\Debug\net6.0\Business.csproj.AssemblyReference.cache
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\BusinessObject\obj\Debug\net6.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\BusinessObject\obj\Debug\net6.0\Business.AssemblyInfoInputs.cache
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\BusinessObject\obj\Debug\net6.0\Business.AssemblyInfo.cs
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\BusinessObject\obj\Debug\net6.0\Business.csproj.CoreCompileInputs.cache
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\BusinessObject\obj\Debug\net6.0\Business.csproj.CopyComplete
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\BusinessObject\obj\Debug\net6.0\Business.dll
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\BusinessObject\obj\Debug\net6.0\refint\Business.dll
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\BusinessObject\obj\Debug\net6.0\Business.pdb
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\BusinessObject\obj\Debug\net6.0\ref\Business.dll
