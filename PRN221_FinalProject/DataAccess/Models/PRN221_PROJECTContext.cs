@@ -5,19 +5,20 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace DataAccess.Models
 {
-    public partial class PRN221_PROJECTContext : DbContext
+    public partial class PRN221_ProjectContext : DbContext
     {
-        public PRN221_PROJECTContext()
+        public PRN221_ProjectContext()
         {
         }
 
-        public PRN221_PROJECTContext(DbContextOptions<PRN221_PROJECTContext> options)
+        public PRN221_ProjectContext(DbContextOptions<PRN221_ProjectContext> options)
             : base(options)
         {
         }
 
         public virtual DbSet<Account> Accounts { get; set; } = null!;
         public virtual DbSet<Class> Classes { get; set; } = null!;
+        public virtual DbSet<Curricolum> Curricolums { get; set; } = null!;
         public virtual DbSet<DetailScore> DetailScores { get; set; } = null!;
         public virtual DbSet<GradeComponent> GradeComponents { get; set; } = null!;
         public virtual DbSet<Major> Majors { get; set; } = null!;
@@ -26,6 +27,7 @@ namespace DataAccess.Models
         public virtual DbSet<Student> Students { get; set; } = null!;
         public virtual DbSet<StudyCourse> StudyCourses { get; set; } = null!;
         public virtual DbSet<Subject> Subjects { get; set; } = null!;
+        public virtual DbSet<SubjectCurricolum> SubjectCurricolums { get; set; } = null!;
         public virtual DbSet<SubjectOfClass> SubjectOfClasses { get; set; } = null!;
         public virtual DbSet<SubjectResult> SubjectResults { get; set; } = null!;
 
@@ -34,7 +36,7 @@ namespace DataAccess.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("server=.\\DUNG;database=PRN221_PROJECT;uid=sa;pwd=123456;Trusted_Connection=SSPI;Encrypt=false;TrustServerCertificate=true");
+                optionsBuilder.UseSqlServer("server=.\\DUNG;database=PRN221_Project;uid=sa;pwd=123456;TrustServerCertificate=true");
             }
         }
 
@@ -116,6 +118,32 @@ namespace DataAccess.Models
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("className");
+
+                entity.Property(e => e.SemesterId).HasColumnName("semesterId");
+
+                entity.HasOne(d => d.Semester)
+                    .WithMany(p => p.Classes)
+                    .HasForeignKey(d => d.SemesterId)
+                    .HasConstraintName("FK_Class_Semester");
+            });
+
+            modelBuilder.Entity<Curricolum>(entity =>
+            {
+                entity.ToTable("Curricolum");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.CurricolumName)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("curricolumName");
+
+                entity.Property(e => e.MajorId).HasColumnName("majorId");
+
+                entity.HasOne(d => d.Major)
+                    .WithMany(p => p.Curricolums)
+                    .HasForeignKey(d => d.MajorId)
+                    .HasConstraintName("FK_Curricolum_Major");
             });
 
             modelBuilder.Entity<DetailScore>(entity =>
@@ -123,6 +151,11 @@ namespace DataAccess.Models
                 entity.ToTable("DetailScore");
 
                 entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Comment)
+                    .HasMaxLength(200)
+                    .IsUnicode(false)
+                    .HasColumnName("comment");
 
                 entity.Property(e => e.GradeComponentId).HasColumnName("gradeComponentId");
 
@@ -153,6 +186,8 @@ namespace DataAccess.Models
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
+                entity.Property(e => e.FinalScoreId).HasColumnName("finalScoreId");
+
                 entity.Property(e => e.GradeCategory)
                     .HasMaxLength(50)
                     .HasColumnName("gradeCategory");
@@ -167,7 +202,14 @@ namespace DataAccess.Models
 
                 entity.Property(e => e.SubjectId).HasColumnName("subjectId");
 
-                entity.Property(e => e.Weight).HasColumnName("weight");
+                entity.Property(e => e.Weight)
+                    .HasColumnType("decimal(4, 1)")
+                    .HasColumnName("weight");
+
+                entity.HasOne(d => d.FinalScore)
+                    .WithMany(p => p.InverseFinalScore)
+                    .HasForeignKey(d => d.FinalScoreId)
+                    .HasConstraintName("FK_GradeComponent_GradeComponent");
 
                 entity.HasOne(d => d.Subject)
                     .WithMany(p => p.GradeComponents)
@@ -210,17 +252,19 @@ namespace DataAccess.Models
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
+                entity.Property(e => e.EndDate)
+                    .HasColumnType("date")
+                    .HasColumnName("endDate");
+
                 entity.Property(e => e.SemesterName)
                     .HasMaxLength(50)
                     .HasColumnName("semesterName");
 
-                entity.Property(e => e.Year).HasColumnName("year");
                 entity.Property(e => e.StartDate)
                     .HasColumnType("date")
                     .HasColumnName("startDate");
-                entity.Property(e => e.EndDate)
-                    .HasColumnType("date")
-                    .HasColumnName("endDate");
+
+                entity.Property(e => e.Year).HasColumnName("year");
             });
 
             modelBuilder.Entity<Student>(entity =>
@@ -253,9 +297,7 @@ namespace DataAccess.Models
             {
                 entity.ToTable("StudyCourse");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Rollnumber)
                     .HasMaxLength(9)
@@ -291,9 +333,9 @@ namespace DataAccess.Models
 
                 entity.Property(e => e.NumOfCredits).HasColumnName("numOfCredits");
 
-                entity.Property(e => e.TermNo).HasColumnName("termNo");
-
-                entity.Property(e => e.Status).HasColumnName("status");
+                entity.Property(e => e.Status)
+                    .HasColumnName("status")
+                    .HasDefaultValueSql("((1))");
 
                 entity.Property(e => e.SubjectCode)
                     .HasMaxLength(10)
@@ -302,6 +344,33 @@ namespace DataAccess.Models
                 entity.Property(e => e.SubjectName)
                     .HasMaxLength(100)
                     .HasColumnName("subjectName");
+
+                entity.Property(e => e.TermNo).HasColumnName("termNo");
+            });
+
+            modelBuilder.Entity<SubjectCurricolum>(entity =>
+            {
+                entity.ToTable("SubjectCurricolum");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.CurricolumId).HasColumnName("curricolumId");
+
+                entity.Property(e => e.Status).HasColumnName("status");
+
+                entity.Property(e => e.SubjectId).HasColumnName("subjectId");
+
+                entity.Property(e => e.TermNo).HasColumnName("termNo");
+
+                entity.HasOne(d => d.Curricolum)
+                    .WithMany(p => p.SubjectCurricolums)
+                    .HasForeignKey(d => d.CurricolumId)
+                    .HasConstraintName("FK_SubjectCurricolum_Curricolum");
+
+                entity.HasOne(d => d.Subject)
+                    .WithMany(p => p.SubjectCurricolums)
+                    .HasForeignKey(d => d.SubjectId)
+                    .HasConstraintName("FK_SubjectCurricolum_Subject");
             });
 
             modelBuilder.Entity<SubjectOfClass>(entity =>
@@ -312,7 +381,13 @@ namespace DataAccess.Models
 
                 entity.Property(e => e.ClassId).HasColumnName("classId");
 
-                entity.Property(e => e.SemesterId).HasColumnName("semesterId");
+                entity.Property(e => e.EndDate)
+                    .HasColumnType("date")
+                    .HasColumnName("endDate");
+
+                entity.Property(e => e.StartDate)
+                    .HasColumnType("date")
+                    .HasColumnName("startDate");
 
                 entity.Property(e => e.SubjectId).HasColumnName("subjectId");
 
@@ -322,11 +397,6 @@ namespace DataAccess.Models
                     .WithMany(p => p.SubjectOfClasses)
                     .HasForeignKey(d => d.ClassId)
                     .HasConstraintName("FK_SubjectOfClass_Class");
-
-                entity.HasOne(d => d.Semester)
-                    .WithMany(p => p.SubjectOfClasses)
-                    .HasForeignKey(d => d.SemesterId)
-                    .HasConstraintName("FK_SubjectOfClass_Semester");
 
                 entity.HasOne(d => d.Subject)
                     .WithMany(p => p.SubjectOfClasses)
@@ -343,9 +413,7 @@ namespace DataAccess.Models
             {
                 entity.ToTable("SubjectResult");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.AverageMark).HasColumnName("averageMark");
 

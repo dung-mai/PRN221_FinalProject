@@ -7,6 +7,7 @@ namespace DataAccess.Models
     {
         public Major()
         {
+            Curricolums = new HashSet<Curricolum>();
             Students = new HashSet<Student>();
         }
 
@@ -14,6 +15,7 @@ namespace DataAccess.Models
         public string? MajorName { get; set; }
         public string? MajorCode { get; set; }
 
+        public virtual ICollection<Curricolum> Curricolums { get; set; }
         public virtual ICollection<Student> Students { get; set; }
     }
 }

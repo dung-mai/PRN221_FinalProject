@@ -1,0 +1,1053 @@
+﻿@page
+@model AcademicGradeManagementApp.Pages.Grade.StudentTranscriptModel
+@{
+    Layout = "_Layout";
+}
+@*<ol class="breadcrumb">
+    <li>
+        <span id="ctl00_lblNavigation">
+            <a href="../Student.aspx">Home</a>&nbsp;|&nbsp;<b>
+                Grade
+                Transcript
+            </b>
+        </span>
+    </li>
+</ol>*@
+<table>
+    <tbody>
+        <tr style="border-bottom: 0 none">
+            <td>
+                <div>
+                    <h2>
+                        Grade report for transcript
+                        <span id="ctl00_mainContent_lblRollNumber">
+                            <span class="label label-default">HE163263</span> - <span class="label label-info">BIT_SE_16B_NET</span>
+                        </span>
+                    </h2>
+                    <br>
+                    <div id="Grid">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td valign="top">
+                                        <div id="ctl00_mainContent_divGrade">
+                                            <table class="table table-hover">
+                                                <thead class="thead-inverse">
+                                                    <tr>
+                                                        <th style="width:10px">No</th>
+                                                        <th style="width:15px">Term</th>
+                                                        <th style="width:80px">Semester</th>
+                                                        <th style="width:60px">Subject Code</th>
+                                                        <th style="width:60px">prerequisite</th>
+                                                        <th style="width:80px">Replaced Subject</th>
+                                                        <th>Subject Name</th>
+                                                        <th style="width:10px">Credit</th>
+                                                        <th style="width:20px">Grade</th>
+                                                        <th style="width:80px">Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>0</td>
+                                                        <td>Fall2020</td>
+                                                        <td>GDQP</td>
+                                                        <td style="width:60px"></td>
+                                                        <td></td>
+                                                        <td>Military training</td>
+                                                        <td>0</td>
+                                                        <td>
+                                                            <span class="label label-primary">8.6</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>0</td>
+                                                        <td>Spring2021</td>
+                                                        <td>VOV124</td>
+                                                        <td style="width:60px">VOV114</td>
+                                                        <td></td>
+                                                        <td>Vovinam 2</td>
+                                                        <td>2</td>
+                                                        <td>
+                                                            <span class="label label-primary">6.7</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>0</td>
+                                                        <td>Spring2021</td>
+                                                        <td>VOV134</td>
+                                                        <td style="width:60px">VOV124</td>
+                                                        <td></td>
+                                                        <td>Vovinam 3</td>
+                                                        <td>2</td>
+                                                        <td>
+                                                            <span class="label label-primary">5.5</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>0</td>
+                                                        <td>Fall2020</td>
+                                                        <td>VOV114</td>
+                                                        <td style="width:60px"></td>
+                                                        <td></td>
+                                                        <td>Vovinam 1</td>
+                                                        <td>2</td>
+                                                        <td>
+                                                            <span class="label label-primary">5.2</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5</td>
+                                                        <td>0</td>
+                                                        <td>Spring2021</td>
+                                                        <td>TRS601</td>
+                                                        <td style="width:60px">TRS501/LUK5</td>
+                                                        <td></td>
+                                                        <td>Transition</td>
+                                                        <td>0</td>
+                                                        <td>
+                                                            <span class="label label-primary">8.2</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6</td>
+                                                        <td>0</td>
+                                                        <td>Spring2021</td>
+                                                        <td>TMI101</td>
+                                                        <td style="width:60px"></td>
+                                                        <td>ÐSA102</td>
+                                                        <td>Traditional musical instrument</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">6.4</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>7</td>
+                                                        <td>1</td>
+                                                        <td>Summer2021</td>
+                                                        <td>SSL101c</td>
+                                                        <td style="width:60px"></td>
+                                                        <td></td>
+                                                        <td>
+                                                            Academic Skills for University Success
+                                                        </td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">9.3</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>8</td>
+                                                        <td>1</td>
+                                                        <td>Summer2021</td>
+                                                        <td>PRF192</td>
+                                                        <td style="width:60px"></td>
+                                                        <td></td>
+                                                        <td>Programming Fundamentals</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">7.7</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>9</td>
+                                                        <td>1</td>
+                                                        <td>Summer2021</td>
+                                                        <td>MAE101</td>
+                                                        <td style="width:60px"></td>
+                                                        <td></td>
+                                                        <td>Mathematics for Engineering</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">9.6</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>10</td>
+                                                        <td>1</td>
+                                                        <td>Summer2021</td>
+                                                        <td>CEA201</td>
+                                                        <td style="width:60px"></td>
+                                                        <td></td>
+                                                        <td>
+                                                            Computer Organization and Architecture
+                                                        </td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">8.8</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>11</td>
+                                                        <td>1</td>
+                                                        <td>Summer2021</td>
+                                                        <td>CSI104</td>
+                                                        <td style="width:60px"></td>
+                                                        <td></td>
+                                                        <td>Introduction to Computer Science</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">9.3</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>12</td>
+                                                        <td>2</td>
+                                                        <td>Fall2021</td>
+                                                        <td>PRO192</td>
+                                                        <td style="width:60px">PRF192</td>
+                                                        <td></td>
+                                                        <td>Object-Oriented Programming</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">9</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>13</td>
+                                                        <td>2</td>
+                                                        <td>Fall2021</td>
+                                                        <td>MAD101</td>
+                                                        <td style="width:60px"></td>
+                                                        <td></td>
+                                                        <td>Discrete mathematics</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">9.1</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>14</td>
+                                                        <td>2</td>
+                                                        <td>Fall2021</td>
+                                                        <td>OSG202</td>
+                                                        <td style="width:60px"></td>
+                                                        <td></td>
+                                                        <td>Operating Systems</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">9.1</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>15</td>
+                                                        <td>2</td>
+                                                        <td>Fall2021</td>
+                                                        <td>NWC203c</td>
+                                                        <td style="width:60px"></td>
+                                                        <td></td>
+                                                        <td>Computer Networking</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">9.5</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>16</td>
+                                                        <td>2</td>
+                                                        <td>Fall2021</td>
+                                                        <td>SSG104</td>
+                                                        <td style="width:60px"></td>
+                                                        <td></td>
+                                                        <td>
+                                                            Communication and In-Group Working
+                                                            Skills
+                                                        </td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">9</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>17</td>
+                                                        <td>3</td>
+                                                        <td>Spring2022</td>
+                                                        <td>JPD113</td>
+                                                        <td style="width:60px"></td>
+                                                        <td></td>
+                                                        <td>Elementary Japanese 1-A1.1</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">9.8</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>18</td>
+                                                        <td>3</td>
+                                                        <td>Spring2022</td>
+                                                        <td>CSD201</td>
+                                                        <td style="width:60px">
+                                                            PRO192/PRJ311/PRJ311/PRO191
+                                                        </td>
+                                                        <td></td>
+                                                        <td>Data Structures and Algorithms</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">8.1</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>19</td>
+                                                        <td>3</td>
+                                                        <td>Spring2022</td>
+                                                        <td>DBI202</td>
+                                                        <td style="width:60px"></td>
+                                                        <td></td>
+                                                        <td>Introduction to Databases</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">8.5</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>20</td>
+                                                        <td>3</td>
+                                                        <td>Spring2022</td>
+                                                        <td>LAB211</td>
+                                                        <td style="width:60px">PRO192</td>
+                                                        <td></td>
+                                                        <td>OOP with Java Lab</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary"></span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>21</td>
+                                                        <td>3</td>
+                                                        <td>Spring2022</td>
+                                                        <td>WED201c</td>
+                                                        <td style="width:60px"></td>
+                                                        <td></td>
+                                                        <td>Web Design</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">9.9</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>22</td>
+                                                        <td>4</td>
+                                                        <td>Summer2022</td>
+                                                        <td>MAS291</td>
+                                                        <td style="width:60px">MAE101/MAC101</td>
+                                                        <td></td>
+                                                        <td>Statistics and Probability</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">9.5</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>23</td>
+                                                        <td>4</td>
+                                                        <td>Summer2022</td>
+                                                        <td>JPD123</td>
+                                                        <td style="width:60px">JPD113/JPD111</td>
+                                                        <td></td>
+                                                        <td>Elementary Japanese 1-A1.2</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">9.9</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>24</td>
+                                                        <td>4</td>
+                                                        <td>Summer2022</td>
+                                                        <td>IOT102</td>
+                                                        <td style="width:60px"></td>
+                                                        <td></td>
+                                                        <td>Internet of Things</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">9.6</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>25</td>
+                                                        <td>4</td>
+                                                        <td>Summer2022</td>
+                                                        <td>PRJ301</td>
+                                                        <td style="width:60px">
+                                                            DBI202&amp;PRO192
+                                                        </td>
+                                                        <td></td>
+                                                        <td>Java Web Application Development</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">7.3</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>26</td>
+                                                        <td>4</td>
+                                                        <td>Summer2022</td>
+                                                        <td>SWE201c</td>
+                                                        <td style="width:60px">PRO192</td>
+                                                        <td></td>
+                                                        <td>
+                                                            Introduction to Software Engineering
+                                                        </td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">9.9</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>27</td>
+                                                        <td>5</td>
+                                                        <td>Fall2022</td>
+                                                        <td>SWP391</td>
+                                                        <td style="width:60px">
+                                                            SWE201c&amp;PRJ301
+                                                        </td>
+                                                        <td></td>
+                                                        <td>Application development project</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">9.5</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>28</td>
+                                                        <td>5</td>
+                                                        <td>Fall2022</td>
+                                                        <td>ITE302c</td>
+                                                        <td style="width:60px"></td>
+                                                        <td></td>
+                                                        <td>Ethics in IT</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">9.7</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>29</td>
+                                                        <td>5</td>
+                                                        <td>Fall2022</td>
+                                                        <td>SWR302</td>
+                                                        <td style="width:60px">SWE201c/SWE102</td>
+                                                        <td></td>
+                                                        <td>Software Requirement</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">7.4</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>30</td>
+                                                        <td>5</td>
+                                                        <td>Fall2022</td>
+                                                        <td>SWT301</td>
+                                                        <td style="width:60px">SWE201c/SWE102</td>
+                                                        <td></td>
+                                                        <td>Software Testing</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">8.5</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>31</td>
+                                                        <td>5</td>
+                                                        <td>Fall2022</td>
+                                                        <td>PRN211</td>
+                                                        <td style="width:60px">
+                                                            DBI202&amp;PRO192
+                                                        </td>
+                                                        <td></td>
+                                                        <td>
+                                                            Basic Cross-Platform Application
+                                                            Programming With .NET
+                                                        </td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">7.8</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>32</td>
+                                                        <td>6</td>
+                                                        <td>Spring2023</td>
+                                                        <td>OJT202</td>
+                                                        <td style="width:60px"></td>
+                                                        <td></td>
+                                                        <td>On the job training</td>
+                                                        <td>10</td>
+                                                        <td>
+                                                            <span class="label label-primary">9</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>33</td>
+                                                        <td>6</td>
+                                                        <td>Spring2023</td>
+                                                        <td>ENW492c</td>
+                                                        <td style="width:60px"></td>
+                                                        <td></td>
+                                                        <td>Writing Research Papers</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-primary">7.8</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-success">Passed</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>34</td>
+                                                        <td>7</td>
+                                                        <td>Summer2023</td>
+                                                        <td style="width:60px">PRN221</td>
+                                                        <td style="width:60px">PRN211</td>
+                                                        <td>
+                                                            <span class="label label-warning"></span>
+                                                        </td>
+                                                        <td>
+                                                            Advanced Cross-Platform Application
+                                                            Programming With .NET
+                                                        </td>
+                                                        <td></td>
+                                                        <td> </td>
+                                                        <td>
+                                                            <span class="label label-info">Studying</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>35</td>
+                                                        <td>7</td>
+                                                        <td>Summer2023</td>
+                                                        <td>EXE101</td>
+                                                        <td style="width:60px"></td>
+                                                        <td></td>
+                                                        <td>Experiential Entrepreneurship 1</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-danger"></span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-danger">
+                                                                Not
+                                                                passed
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>36</td>
+                                                        <td>7</td>
+                                                        <td>Summer2023</td>
+                                                        <td>PRM392</td>
+                                                        <td style="width:60px">PRO192</td>
+                                                        <td></td>
+                                                        <td>Mobile Programming</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-danger"></span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-danger">
+                                                                Not
+                                                                passed
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>37</td>
+                                                        <td>7</td>
+                                                        <td>Summer2023</td>
+                                                        <td>PRU211m</td>
+                                                        <td style="width:60px">PRO192</td>
+                                                        <td></td>
+                                                        <td>C# Programming and Unity</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-danger"></span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-danger">
+                                                                Not
+                                                                passed
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>38</td>
+                                                        <td>7</td>
+                                                        <td>Summer2023</td>
+                                                        <td>SWD392</td>
+                                                        <td style="width:60px">
+                                                            PRO192&amp;(&amp;SWE201c/SWE102)
+                                                        </td>
+                                                        <td></td>
+                                                        <td>SW Architecture and Design</td>
+                                                        <td>3</td>
+                                                        <td>
+                                                            <span class="label label-danger"></span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-danger">
+                                                                Not
+                                                                passed
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>39</td>
+                                                        <td>8</td>
+                                                        <td></td>
+                                                        <td style="width:60px">EXE201</td>
+                                                        <td style="width:60px"></td>
+                                                        <td>
+                                                            <span class="label label-warning"></span>
+                                                        </td>
+                                                        <td>Experiential Entrepreneurship 2</td>
+                                                        <td></td>
+                                                        <td> </td>
+                                                        <td>
+                                                            <span class="label label-default">
+                                                                Not
+                                                                started
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>40</td>
+                                                        <td>8</td>
+                                                        <td></td>
+                                                        <td style="width:60px">MLN122</td>
+                                                        <td style="width:60px"></td>
+                                                        <td>
+                                                            <span class="label label-warning"></span>
+                                                        </td>
+                                                        <td>
+                                                            Political economics of Marxism –
+                                                            Leninism
+                                                        </td>
+                                                        <td></td>
+                                                        <td> </td>
+                                                        <td>
+                                                            <span class="label label-default">
+                                                                Not
+                                                                started
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>41</td>
+                                                        <td>8</td>
+                                                        <td></td>
+                                                        <td style="width:60px">PMG202c</td>
+                                                        <td style="width:60px"></td>
+                                                        <td>
+                                                            <span class="label label-warning"></span>
+                                                        </td>
+                                                        <td>Project management</td>
+                                                        <td></td>
+                                                        <td> </td>
+                                                        <td>
+                                                            <span class="label label-default">
+                                                                Not
+                                                                started
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>42</td>
+                                                        <td>8</td>
+                                                        <td></td>
+                                                        <td style="width:60px">WDU203c</td>
+                                                        <td style="width:60px"></td>
+                                                        <td>
+                                                            <span class="label label-warning"></span>
+                                                        </td>
+                                                        <td>UI/UX Design</td>
+                                                        <td></td>
+                                                        <td> </td>
+                                                        <td>
+                                                            <span class="label label-default">
+                                                                Not
+                                                                started
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>43</td>
+                                                        <td>8</td>
+                                                        <td></td>
+                                                        <td style="width:60px">PRN231</td>
+                                                        <td style="width:60px">PRN221</td>
+                                                        <td>
+                                                            <span class="label label-warning"></span>
+                                                        </td>
+                                                        <td>
+                                                            Building Cross-Platform Back-End
+                                                            Application With .NET
+                                                        </td>
+                                                        <td></td>
+                                                        <td> </td>
+                                                        <td>
+                                                            <span class="label label-default">
+                                                                Not
+                                                                started
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>44</td>
+                                                        <td>8</td>
+                                                        <td></td>
+                                                        <td style="width:60px">MLN111</td>
+                                                        <td style="width:60px"></td>
+                                                        <td>
+                                                            <span class="label label-warning"></span>
+                                                        </td>
+                                                        <td>Philosophy of Marxism – Leninism</td>
+                                                        <td></td>
+                                                        <td> </td>
+                                                        <td>
+                                                            <span class="label label-default">
+                                                                Not
+                                                                started
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>45</td>
+                                                        <td>9</td>
+                                                        <td></td>
+                                                        <td style="width:60px">MLN131</td>
+                                                        <td style="width:60px">
+                                                            MLN111&amp;MLN122
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-warning"></span>
+                                                        </td>
+                                                        <td>Scientific socialism</td>
+                                                        <td></td>
+                                                        <td> </td>
+                                                        <td>
+                                                            <span class="label label-default">
+                                                                Not
+                                                                started
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>46</td>
+                                                        <td>9</td>
+                                                        <td></td>
+                                                        <td style="width:60px">VNR202</td>
+                                                        <td style="width:60px">
+                                                            MLN111&amp;MLN122
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-warning"></span>
+                                                        </td>
+                                                        <td>History of Việt Nam Communist Party</td>
+                                                        <td></td>
+                                                        <td> </td>
+                                                        <td>
+                                                            <span class="label label-default">
+                                                                Not
+                                                                started
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>47</td>
+                                                        <td>9</td>
+                                                        <td></td>
+                                                        <td style="width:60px">SEP490</td>
+                                                        <td style="width:60px"></td>
+                                                        <td>
+                                                            <span class="label label-warning"></span>
+                                                        </td>
+                                                        <td>SE Capstone Project</td>
+                                                        <td></td>
+                                                        <td> </td>
+                                                        <td>
+                                                            <span class="label label-default">
+                                                                Not
+                                                                started
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>48</td>
+                                                        <td>9</td>
+                                                        <td></td>
+                                                        <td style="width:60px">HCM202</td>
+                                                        <td style="width:60px">
+                                                            MLN111&amp;MLN122
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-warning"></span>
+                                                        </td>
+                                                        <td>Ho Chi Minh Ideology</td>
+                                                        <td></td>
+                                                        <td> </td>
+                                                        <td>
+                                                            <span class="label label-default">
+                                                                Not
+                                                                started
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table>
+
+
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td valign="top" align="left">
+                                                            <div id="ctl00_mainContent_divDNTN">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="top" align="left">
+                                                            <h2>
+                                                                <span class="label label-primary">
+                                                                    Những
+                                                                    môn ngoài khung chương
+                                                                    trình
+                                                                </span>
+                                                            </h2>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="top">
+                                                            <div id="ctl00_mainContent_divNotGrade">
+                                                                <table class="table table-hover">
+                                                                    <thead class="thead-inverse">
+                                                                        <tr>
+                                                                            <th style="width:10px">
+                                                                                No
+                                                                            </th>
+                                                                            <th style="width:40px">
+                                                                                Semester
+                                                                            </th>
+                                                                            <th style="width:40px">
+                                                                                SubjectCode
+                                                                            </th>
+                                                                            <th>SubjectName</th>
+                                                                            <th>Credit</th>
+                                                                            <th style="width:20px">
+                                                                                Grade
+                                                                            </th>
+                                                                            <th style="width:55px">
+                                                                                Status
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>1</td>
+                                                                            <td>Fall2020</td>
+                                                                            <td>TRS401</td>
+                                                                            <td>English 4</td>
+                                                                            <td>0</td>
+                                                                            <td>
+                                                                                <span class="label label-primary">7.7</span>
+                                                                            </td>
+                                                                            <td>
+                                                                                <span class="label label-success">Passed</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2</td>
+                                                                            <td>Spring2021</td>
+                                                                            <td>TRS501</td>
+                                                                            <td>English 5</td>
+                                                                            <td>0</td>
+                                                                            <td>
+                                                                                <span class="label label-primary">8.5</span>
+                                                                            </td>
+                                                                            <td>
+                                                                                <span class="label label-success">Passed</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                                <table>
+                                                                </table>
+                                                            </div>
+                                                            <input type="hidden"
+                                                                    name="ctl00$mainContent$hfGridHtml"
+                                                                    id="ctl00_mainContent_hfGridHtml"><input type="submit"
+                                                                                                            name="ctl00$mainContent$btnExport"
+                                                                                                            value="Export To Excel"
+                                                                                                            id="ctl00_mainContent_btnExport"><input type="hidden"
+                                                                                                                                                    name="ctl00$mainContent$hdError"
+                                                                                                                                                    id="ctl00_mainContent_hdError">
+
+                                                        </td>
+                                                    </tr>
+                                                    <tr style="border-bottom: 0 none">
+                                                        <td>
+                                                            <br>
+                                                            <table width="100%"
+                                                                    style="border: 1px solid transparent;"
+                                                                    id="cssTable">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div id="ctl00_divSupport">
+                                                                                <br>
+                                                                                <b>
+                                                                                    Mọi góp ý, thắc
+                                                                                    mắc xin liên hệ:
+                                                                                </b><span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13.333333969116211px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;">
+                                                                                    Phòng
+                                                                                    dịch vụ sinh
+                                                                                    viên
+                                                                                </span>:
+                                                                                Email: <a href="mailto:dichvusinhvien@fe.edu.vn">dichvusinhvien@fe.edu.vn</a>.
+                                                                                Điện thoại: <span class="style1"
+                                                                                                    style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13.333333969116211px; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;">
+                                                                                    (024)7308.13.13
+                                                                                </span>
+                                                                                <br>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p style="text-align: center">
+                                                                                © Powered by <a href="http://fpt.edu.vn"
+                                                                                                target="_blank">
+                                                                                    FPT
+                                                                                    University
+                                                                                </a>&nbsp;|&nbsp;
+                                                                                <a href="http://cms.fpt.edu.vn/"
+                                                                                    target="_blank">CMS</a>&nbsp;|&nbsp;
+                                                                                <a href="http://library.fpt.edu.vn"
+                                                                                    target="_blank">library</a>&nbsp;|&nbsp;
+                                                                                <a href="http://library.books24x7.com"
+                                                                                    target="_blank">books24x7</a>
+                                                                                <span id="ctl00_lblHelpdesk"></span>
+                                                                            </p>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

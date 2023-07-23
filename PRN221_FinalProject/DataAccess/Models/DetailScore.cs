@@ -11,6 +11,7 @@ namespace DataAccess.Models
         public double? Mark { get; set; }
         public DateTime? UpdatedAt { get; set; }
         public int? UpdatedBy { get; set; }
+        public string? Comment { get; set; }
 
         public virtual GradeComponent? GradeComponent { get; set; }
         public virtual SubjectResult? SubjectResult { get; set; }

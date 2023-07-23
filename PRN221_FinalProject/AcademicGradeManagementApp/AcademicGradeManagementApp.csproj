@@ -7,12 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\Grade\StudentGrade.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Admin\Pages\" />
-    <Folder Include="Pages\Shared\" />
+    <Folder Include="Pages\Authentication\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,10 +24,6 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Pages\Grade\StudentGrade.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Pages\Grade\StudentGrade.cshtml" />
   </ItemGroup>
 
 </Project>

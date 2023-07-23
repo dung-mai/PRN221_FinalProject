@@ -10,8 +10,8 @@ namespace DataAccess.Managers
 {
     public class AccountManager
     {
-        PRN221_PROJECTContext _context;
-        public AccountManager(PRN221_PROJECTContext context)
+        PRN221_ProjectContext _context;
+        public AccountManager(PRN221_ProjectContext context)
         { 
             _context = context;
         }

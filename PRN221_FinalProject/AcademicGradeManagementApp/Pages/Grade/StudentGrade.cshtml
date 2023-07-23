@@ -1,6 +1,9 @@
 ﻿@page "/Grade/StudentGrade"
 @model AcademicGradeManagementApp.Pages.Grade.StudentGradeModel
 @{
+    Layout = "_Layout";
+    SemesterDTO? lastTerm = Model?.Semesters?.Last();
+    double? averageMark = Model?.CurrentCourse?.SubjectResults?.ToList()[0]?.AverageMark;
 }
 <form method="post"
       action="./StudentGrade.aspx?rollNumber=HE163263&amp;term=Summer2023&amp;course=66653"
@@ -12,8 +15,8 @@
                     <div>
                         <h2>
                             Grade report for <span id="ctl00_mainContent_lblRollNumber">
-                                Mai Văn Dũng
-                                (HE163263)
+                                @Model.LoggedInAccount?.Fullname
+                                (@Model.Student?.Rollnumber)
                             </span>
                         </h2>
                         <table>
@@ -34,49 +37,45 @@
                                                         <div id="ctl00_mainContent_divTerm">
                                                             <table>
                                                                 <tbody>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <a href="?rollNumber=HE163263&amp;term=Fall2020">Fall2020</a>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <a href="?rollNumber=HE163263&amp;term=Spring2021">Spring2021</a>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <a href="?rollNumber=HE163263&amp;term=Summer2021">Summer2021</a>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <a href="?rollNumber=HE163263&amp;term=Fall2021">Fall2021</a>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <a href="?rollNumber=HE163263&amp;term=Spring2022">Spring2022</a>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <a href="?rollNumber=HE163263&amp;term=Summer2022">Summer2022</a>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <a href="?rollNumber=HE163263&amp;term=Fall2022">Fall2022</a>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <a href="?rollNumber=HE163263&amp;term=Spring2023">Spring2023</a>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td><b>Summer2023</b></td>
-                                                                    </tr>
+                                                                    @foreach (SemesterDTO semester in Model.Semesters)
+                                                                    {
+                                                                        //TERM IS SELECTED
+                                                                        if (Model.TermId.HasValue)
+                                                                        {
+                                                                            if (semester.Id != Model.TermId)
+                                                                            {
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <a href="?term=@semester.Id">@semester.SemesterName@semester.Year</a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <tr>
+                                                                                    <td><b>@semester.SemesterName@semester.Year</b></td>
+                                                                                </tr>
+                                                                            }
+                                                                        }
+                                                                        //TERM IS NOT SELECTED --> Default
+                                                                        else
+                                                                        {
+                                                                            if (semester != lastTerm)
+                                                                            {
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <a href="?term=@semester.Id">@semester.SemesterName@semester.Year</a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <tr>
+                                                                                    <td><b>@semester.SemesterName@semester.Year</b></td>
+                                                                                </tr>
+                                                                            }
+                                                                        }
+                                                                    }
                                                                 </tbody>
                                                             </table>
                                                         </div>
@@ -85,49 +84,48 @@
                                                         <div id="ctl00_mainContent_divCourse">
                                                             <table>
                                                                 <tbody>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <b>
-                                                                                Experiential
-                                                                                Entrepreneurship 1
-                                                                                (EXE101) (SE1619-NET,
-                                                                                from 10/05/2023 -
-                                                                                19/07/2023)
-                                                                            </b>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <a href="?rollNumber=HE163263&amp;term=Summer2023&amp;course=65400">
-                                                                                Mobile
-                                                                                Programming (PRM392)
-                                                                            </a>
-                                                                            (SE1619-NET, from 09/05/2023
-                                                                            - 21/07/2023)
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <a href="?rollNumber=HE163263&amp;term=Summer2023&amp;course=65377">
-                                                                                C#
-                                                                                Programming and Unity
-                                                                                (PRU211m)
-                                                                            </a>
-                                                                            (SE1619-NET, from 08/05/2023
-                                                                            - 19/07/2023)
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <a href="?rollNumber=HE163263&amp;term=Summer2023&amp;course=65382">
-                                                                                SW
-                                                                                Architecture and Design
-                                                                                (SWD392)
-                                                                            </a>
-                                                                            (SE1619-NET, from 09/05/2023
-                                                                            - 20/07/2023)
-                                                                        </td>
-                                                                    </tr>
+                                                                    @foreach (StudyCourseDTO course in Model.SemesterCourse)
+                                                                    {
+                                                                        if (Model.CurrentCourse == null)
+                                                                        {
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <a href="?term=@(Model.TermId.HasValue ? Model.TermId : lastTerm.Id)&courseId=@course.SubjectOfClass.SubjectId">
+                                                                                        @course?.SubjectOfClass?.Subject?.SubjectName (@course?.SubjectOfClass?.Subject?.SubjectCode)
+                                                                                    </a>
+                                                                                    (@course.SubjectOfClass.Class.ClassName, from  @(course.SubjectOfClass.StartDate?.ToString("dd/MM/yyyy"))
+                                                                                    - @(course.SubjectOfClass.EndDate?.ToString("dd/MM/yyyy")))
+                                                                                </td>
+                                                                            </tr>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            if (course.SubjectOfClass.SubjectId == Model.CurrentCourse.SubjectOfClass.SubjectId)
+                                                                            {
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <b>
+                                                                                            @course?.SubjectOfClass?.Subject?.SubjectName (@course?.SubjectOfClass?.Subject?.SubjectCode)
+                                                                                            (@course.SubjectOfClass.Class.ClassName, from  @(course.SubjectOfClass.StartDate?.ToString("dd/MM/yyyy"))
+                                                                                            - @(course.SubjectOfClass.EndDate?.ToString("dd/MM/yyyy")))
+                                                                                        </b>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <a href="?term=@(Model.TermId.HasValue ? Model.TermId : lastTerm.Id)&courseId=@course.SubjectOfClass.SubjectId">
+                                                                                            @course?.SubjectOfClass?.Subject?.SubjectName (@course?.SubjectOfClass?.Subject?.SubjectCode)
+                                                                                        </a>
+                                                                                        (@course.SubjectOfClass.Class.ClassName, from  @(course.SubjectOfClass.StartDate?.ToString("dd/MM/yyyy"))
+                                                                                        - @(course.SubjectOfClass.EndDate?.ToString("dd/MM/yyyy")))
+                                                                                    </td>
+                                                                                </tr>
+                                                                            }
+                                                                        }
+                                                                    }
                                                                 </tbody>
                                                             </table>
                                                         </div>
@@ -136,146 +134,65 @@
                                             </tbody>
                                         </table>
                                     </td>
-                                    <td valign="top">
-                                        <div id="ctl00_mainContent_divGrade">
-                                            <table summary="Report">
-                                                <caption>... then see report</caption>
-                                                <thead>
-                                                    <tr>
-                                                        <th>Grade category</th>
-                                                        <th>Grade item</th>
-                                                        <th>Weight</th>
-                                                        <th>Value</th>
-                                                        <th>Comment</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td rowspan="2">
-                                                            Group Assignment 1 (Checkpoint
-                                                            1)
-                                                        </td>
-                                                        <td>Group Assignment 1 (Checkpoint 1)</td>
-                                                        <td>10.0 %</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Total</td>
-                                                        <td>10.0 %</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td rowspan="7">
-                                                            Constructivism Presentations
-                                                        </td>
-                                                        <td>Constructivism Presentation 1</td>
-                                                        <td>2.5 %</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Constructivism Presentation 2</td>
-                                                        <td>2.5 %</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Constructivism Presentation 3</td>
-                                                        <td>2.5 %</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Constructivism Presentation 4</td>
-                                                        <td>2.5 %</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Constructivism Presentation 5</td>
-                                                        <td>2.5 %</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Constructivism Presentation 6</td>
-                                                        <td>2.5 %</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Total</td>
-                                                        <td>15.0 %</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td rowspan="2">
-                                                            Group Assignment 3 (Checkpoint
-                                                            3)
-                                                        </td>
-                                                        <td>Group Assignment 3 (Checkpoint 3)</td>
-                                                        <td>15.0 %</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Total</td>
-                                                        <td>15.0 %</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td rowspan="2">
-                                                            Group Assignment 2 (Checkpoint
-                                                            2)
-                                                        </td>
-                                                        <td>Group Assignment 2 (Checkpoint 2)</td>
-                                                        <td>20.0 %</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Total</td>
-                                                        <td>20.0 %</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td rowspan="2">
-                                                            Group Assignment 4 (Checkpoint
-                                                            4)
-                                                        </td>
-                                                        <td>Group Assignment 4 (Checkpoint 4)</td>
-                                                        <td>40.0 %</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Total</td>
-                                                        <td>40.0 %</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                </tbody>
-                                                <tfoot>
-                                                    <tr>
-                                                        <td rowspan="2">Course total</td>
-                                                        <td>Average</td>
-                                                        <td colspan="3">0.0</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Status</td>
-                                                        <td colspan="3">
-                                                            <font color="SeaGreen">Studying</font>
-                                                        </td>
-                                                    </tr>
-                                                </tfoot>
-                                            </table>
-                                        </div>
-                                    </td>
+                                    @if (Model.CurrentCourse != null)
+                                    {
+                                        <td valign="top">
+                                            <div id="ctl00_mainContent_divGrade">
+                                                <table summary="Report">
+                                                    <caption>... then see report</caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Grade category</th>
+                                                            <th>Grade item</th>
+                                                            <th>Weight</th>
+                                                            <th>Value</th>
+                                                            <th>Comment</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach (GradeComponentDTO gradeComponent in Model.GradeComponents)
+                                                        {
+                                                            int numberOfComponentInCategory = gradeComponent.GetNumberOfItemInCategory(Model.GradeComponents);
+                                                            <tr>
+                                                                @if (numberOfComponentInCategory == 1 || gradeComponent.GradeItem.Contains("1"))
+                                                                {
+                                                                    <td rowspan="@(numberOfComponentInCategory + 1)">
+                                                                        @gradeComponent.GradeCategory
+                                                                    </td>
+                                                                }
+                                                                <td>@gradeComponent.GradeItem</td>
+                                                                <td>@gradeComponent.Weight %</td>
+                                                                <td>@gradeComponent?.DetailScore?.Mark</td>
+                                                                <td></td>
+                                                            </tr>
+
+                                                            @if (numberOfComponentInCategory == 1 || gradeComponent.GradeItem.Contains(numberOfComponentInCategory.ToString()))
+                                                            {
+                                                            <tr>
+                                                                <td>Total</td>
+                                                                <td>@(gradeComponent.Weight * numberOfComponentInCategory)%</td>
+                                                                <td>@gradeComponent.GetAverageCategoryScore(Model.GradeComponents)</td>
+                                                                <td></td>
+                                                            </tr>
+                                                            }
+                                                        }
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td rowspan="2">Course total</td>
+                                                            <td>Average</td>
+                                                            <td colspan="3">@(averageMark.HasValue ? String.Format("{0:F1}", averageMark) : "0.0")</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Status</td>
+                                                            <td colspan="3">
+                                                                <font color="SeaGreen">@(Model.CurrentCourse.SubjectResults.ToList()[0].GetStatus())</font>
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    }
                                 </tr>
                             </tbody>
                         </table>
@@ -308,15 +225,15 @@
                             <tr>
                                 <td>
                                     @*<p style="text-align: center">
-                                        © Powered by <a href="http://fpt.edu.vn" target="_blank">
-                                            FPT
-                                            University
-                                        </a>&nbsp;|&nbsp;
-                                        <a href="http://cms.fpt.edu.vn/"
-                                           target="_blank">CMS</a>&nbsp;|&nbsp; <a href="http://library.fpt.edu.vn"
-                                                                                   target="_blank">library</a>&nbsp;|&nbsp; <a href="http://library.books24x7.com"
-                                                                                                                               target="_blank">books24x7</a>
-                                        <span id="ctl00_lblHelpdesk"></span>
+                                    © Powered by <a href="http://fpt.edu.vn" target="_blank">
+                                    FPT
+                                    University
+                                    </a>&nbsp;|&nbsp;
+                                    <a href="http://cms.fpt.edu.vn/"
+                                    target="_blank">CMS</a>&nbsp;|&nbsp; <a href="http://library.fpt.edu.vn"
+                                    target="_blank">library</a>&nbsp;|&nbsp; <a href="http://library.books24x7.com"
+                                    target="_blank">books24x7</a>
+                                    <span id="ctl00_lblHelpdesk"></span>
                                     </p>*@
                                 </td>
                             </tr>

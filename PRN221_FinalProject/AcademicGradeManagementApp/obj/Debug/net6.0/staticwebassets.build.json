@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1VHkBzeQOlTe2vu/5/oY1sni2/dSkT0ZHVd+36VXSmU=",
+  "Hash": "Sil/VlmiLwBK3lYPu98SEXBl5skvmbRnwSvR8kOtLTs=",
   "Source": "AcademicGradeManagementApp",
   "BasePath": "_content/AcademicGradeManagementApp",
   "Mode": "Default",
@@ -102,6 +102,23 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap.css"
     },
     {
+      "Identity": "D:\\FPTUniversity_Study\\Semester_7\\PRN221\\PRN221_FinalProject\\PRN221_FinalProject\\AcademicGradeManagementApp\\wwwroot\\css\\bootstrap.min.css",
+      "SourceId": "AcademicGradeManagementApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\FPTUniversity_Study\\Semester_7\\PRN221\\PRN221_FinalProject\\PRN221_FinalProject\\AcademicGradeManagementApp\\wwwroot\\",
+      "BasePath": "_content/AcademicGradeManagementApp",
+      "RelativePath": "css/bootstrap.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bootstrap.min.css"
+    },
+    {
       "Identity": "D:\\FPTUniversity_Study\\Semester_7\\PRN221\\PRN221_FinalProject\\PRN221_FinalProject\\AcademicGradeManagementApp\\wwwroot\\css\\cart.css",
       "SourceId": "AcademicGradeManagementApp",
       "SourceType": "Discovered",
@@ -117,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\cart.css"
+    },
+    {
+      "Identity": "D:\\FPTUniversity_Study\\Semester_7\\PRN221\\PRN221_FinalProject\\PRN221_FinalProject\\AcademicGradeManagementApp\\wwwroot\\css\\fu.css",
+      "SourceId": "AcademicGradeManagementApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\FPTUniversity_Study\\Semester_7\\PRN221\\PRN221_FinalProject\\PRN221_FinalProject\\AcademicGradeManagementApp\\wwwroot\\",
+      "BasePath": "_content/AcademicGradeManagementApp",
+      "RelativePath": "css/fu.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\fu.css"
     },
     {
       "Identity": "D:\\FPTUniversity_Study\\Semester_7\\PRN221\\PRN221_FinalProject\\PRN221_FinalProject\\AcademicGradeManagementApp\\wwwroot\\css\\pagger.css",

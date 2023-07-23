@@ -1,5 +1,90 @@
-﻿@page "/home"
+﻿@page "/"
 @model AcademicGradeManagementApp.Pages.IndexModel
 @{
+    Layout = "_Layout";
 }
-Trang chủ đây
+<style>
+    .home-layout {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .a-button {
+        padding: 10px;
+        height: auto;
+        width: 100%;
+        background: rgba(242, 153, 74, 0.1);
+        border-radius: 8px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        color: black;
+        text-decoration: none;
+        font-size: 14px;
+        transition: all 0.2s ease-in-out;
+    }
+
+        .a-button:hover {
+            background: rgba(242, 153, 74, 0.4);
+            box-shadow: 0px 0px 0px 1px #F2994A;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+
+
+    .card {
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+        border-radius: 15px;
+        border: none;
+    }
+
+    .card-header {
+        color: #08c;
+        background: none;
+        border-bottom: 1px solid #f6f6f6;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 35px;
+    }
+
+    .margin-bot-10 {
+        margin-bottom: 10px;
+    }
+
+    .fixed-position-button {
+        background-color: #08c;
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 999;
+    }
+</style>
+<div class="col">
+    <div class="card">
+        <h3 class="card-header font-weight-bold">Student's feature</h3>
+        <div class="card-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <a class="a-button" href="/Grade/StudentGrade">
+                            View Mark Report (Xem điểm)
+                        </a>
+                        <a class="a-button" href="/Grade/StudentTranscript">
+                            View Transcript Report (Xem báo cáo điểm)
+                        </a>
+                        <a class="a-button" href="tool/AllPrequisiteSubject.aspx">
+                            Show Learning Path
+                            of a Subject
+                        </a>
+                        <a class="a-button" href="tool/AllCorollarySubject.aspx">
+                            A subject is the
+                            pre-requisite of
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

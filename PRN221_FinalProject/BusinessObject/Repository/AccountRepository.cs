@@ -13,10 +13,10 @@ namespace Business.Repository
 {
     public class AccountRepository : IAccountRepository
     {
-        PRN221_PROJECTContext _context;
+        PRN221_ProjectContext _context;
         IMapper _mapper;
 
-        public AccountRepository(PRN221_PROJECTContext context, IMapper mapper)
+        public AccountRepository(PRN221_ProjectContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

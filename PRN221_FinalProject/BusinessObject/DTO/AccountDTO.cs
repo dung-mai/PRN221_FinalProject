@@ -19,6 +19,11 @@ namespace Bussiness.DTO
         public string? Address { get; set; }
         public string? Image { get; set; }
         public short Status { get; set; }
+        public string? Fullname { 
+            get { 
+                return $"{Firstname} {Middlename} {Lastname}";
+            }
+        }
 
         public virtual RoleDTO Role { get; set; } = null!;
     }

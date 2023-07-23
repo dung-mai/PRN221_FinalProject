@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess.Models;
+using System;
 using System.Collections.Generic;
 
 namespace Bussiness.DTO
@@ -7,6 +8,6 @@ namespace Bussiness.DTO
     {
         public int Id { get; set; }
         public string? ClassName { get; set; }
-
+        public virtual SemesterDTO? Semester { get; set; }
     }
 }

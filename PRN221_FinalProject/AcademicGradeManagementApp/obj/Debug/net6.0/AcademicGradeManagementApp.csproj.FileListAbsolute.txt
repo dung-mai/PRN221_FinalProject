@@ -247,5 +247,5 @@ D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject
 D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\AcademicGradeManagementApp\bin\Debug\net6.0\DataAccess.pdb
 D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\AcademicGradeManagementApp\obj\Debug\net6.0\AcademicGradeManagementApp.RazorAssemblyInfo.cache
 D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\AcademicGradeManagementApp\obj\Debug\net6.0\AcademicGradeManagementApp.RazorAssemblyInfo.cs
-D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\AcademicGradeManagementApp\obj\Debug\net6.0\scopedcss\Pages\Grade\Shared\_Layout.cshtml.rz.scp.css
 D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\AcademicGradeManagementApp\obj\Debug\net6.0\scopedcss\projectbundle\AcademicGradeManagementApp.bundle.scp.css
+D:\FPTUniversity_Study\Semester_7\PRN221\PRN221_FinalProject\PRN221_FinalProject\AcademicGradeManagementApp\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css

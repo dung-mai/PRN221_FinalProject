@@ -1,12 +1,25 @@
+using AcademicGradeManagementApp.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace AcademicGradeManagementApp.Pages
 {
-    public class IndexModel : PageModel
+    public class IndexModel : PageModelBase
     {
-        public void OnGet()
+        public IndexModel()
         {
+            authorizedRoles = new string[] { "student", "teacher", "TMO" };
+        }
+
+        public IActionResult OnGet()
+        {
+            if (!HasAuthorized())
+            {
+                return LoginBasedFeatureRedirect();
+            }
+
+
+            return Page();
         }
     }
 }

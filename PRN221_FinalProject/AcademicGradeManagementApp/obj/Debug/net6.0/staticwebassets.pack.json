@@ -17,8 +17,16 @@
       "PackagePath": "staticwebassets\\css\\bootstrap.css"
     },
     {
+      "Id": "D:\\FPTUniversity_Study\\Semester_7\\PRN221\\PRN221_FinalProject\\PRN221_FinalProject\\AcademicGradeManagementApp\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
       "Id": "D:\\FPTUniversity_Study\\Semester_7\\PRN221\\PRN221_FinalProject\\PRN221_FinalProject\\AcademicGradeManagementApp\\wwwroot\\css\\cart.css",
       "PackagePath": "staticwebassets\\css\\cart.css"
+    },
+    {
+      "Id": "D:\\FPTUniversity_Study\\Semester_7\\PRN221\\PRN221_FinalProject\\PRN221_FinalProject\\AcademicGradeManagementApp\\wwwroot\\css\\fu.css",
+      "PackagePath": "staticwebassets\\css\\fu.css"
     },
     {
       "Id": "D:\\FPTUniversity_Study\\Semester_7\\PRN221\\PRN221_FinalProject\\PRN221_FinalProject\\AcademicGradeManagementApp\\wwwroot\\css\\pagger.css",

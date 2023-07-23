@@ -15,9 +15,10 @@ namespace Bussiness.DTO
         public int? ClassId { get; set; }
         public int? SubjectId { get; set; }
         public int? SemesterId { get; set; }
+        public DateTime? StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
 
         public virtual ClassDTO? Class { get; set; }
-        public virtual SemesterDTO? Semester { get; set; }
         public virtual SubjectDTO? Subject { get; set; }
         public virtual AccountDTO? Teacher { get; set; }
         public virtual ICollection<StudyCourseDTO> StudyCourses { get; set; }

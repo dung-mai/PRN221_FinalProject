@@ -7,7 +7,7 @@ namespace DataAccess.Models
     {
         public Semester()
         {
-            SubjectOfClasses = new HashSet<SubjectOfClass>();
+            Classes = new HashSet<Class>();
         }
 
         public int Id { get; set; }
@@ -16,6 +16,6 @@ namespace DataAccess.Models
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
 
-        public virtual ICollection<SubjectOfClass> SubjectOfClasses { get; set; }
+        public virtual ICollection<Class> Classes { get; set; }
     }
 }

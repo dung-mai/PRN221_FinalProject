@@ -19,7 +19,12 @@ namespace Bussiness.Mapping
             CreateMap<Major, MajorDTO>().ReverseMap();
             CreateMap<Role, RoleDTO>().ReverseMap();
             CreateMap<Semester, SemesterDTO>().ReverseMap();
-            CreateMap<Student, StudentDTO>().ReverseMap();
+            CreateMap<Student, StudentDTO>()
+                    .ForMember(dest => dest.StudyCourses, opt => opt.MapFrom(src => src.StudyCourses))
+                    .ForMember(dest => dest.Account, opt => opt.MapFrom(src => src.Account))
+                .ReverseMap()
+                    .ForMember(dest => dest.StudyCourses, opt => opt.MapFrom(src => src.StudyCourses))
+                    .ForMember(dest => dest.Account, opt => opt.MapFrom(src => src.Account));
             CreateMap<StudyCourse, StudyCourseDTO>().ReverseMap();
             CreateMap<Subject, SubjectDTO>().ReverseMap();
             CreateMap<Subject, SubjectDTO>().ReverseMap();

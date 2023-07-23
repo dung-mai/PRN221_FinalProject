@@ -14,10 +14,10 @@ namespace DataAccess.Models
         public int? TeacherId { get; set; }
         public int? ClassId { get; set; }
         public int? SubjectId { get; set; }
-        public int? SemesterId { get; set; }
+        public DateTime? StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
 
         public virtual Class? Class { get; set; }
-        public virtual Semester? Semester { get; set; }
         public virtual Subject? Subject { get; set; }
         public virtual Account? Teacher { get; set; }
         public virtual ICollection<StudyCourse> StudyCourses { get; set; }

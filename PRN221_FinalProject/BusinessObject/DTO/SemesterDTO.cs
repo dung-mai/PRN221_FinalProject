@@ -10,5 +10,10 @@ namespace Bussiness.DTO
         public string? SemesterName { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
+
+        public static implicit operator int(SemesterDTO v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
